@@ -1,0 +1,21 @@
+
+
+386_OBJECTS=\
+ $(OBJ_PATH)\$O\filter.obj \
+ $(OBJ_PATH)\$O\device.obj \
+ $(OBJ_PATH)\$O\flt_dbg.obj \
+
+
+_RES_FILE=$(OBJ_PATH)\$O\filter.res
+PRECOMPILED_INCLUDE_BASENAME=precomp.h
+
+
+
+
+# lowercased
+BASEDIR=c:\winddk
+OBJECT_ROOT=c:\winddk
+MAKEDIR_LOWERCASE=c:\radasm\wdk\projects\driver_projects\filter
+OBJ_PATH=c:\radasm\wdk\projects\driver_projects\filter
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0

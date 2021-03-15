@@ -1,0 +1,8 @@
+При компіляції використовується файл radasmbuild.cmd, отриманий незначною 
+модернізацією штатного setenv.bat зі складу WDK. Синтаксис: 
+radasmbuild.cmd <WDK_directory> [fre|chk] [64|x64] [WIN7|WLH|WXP|WNET] [bscmake] [no_oacr] [separate_object_root] <Project directory>
+<Project directory> - шлях до каталогу проекту, інші параметри аналогічні setenv.bat
+За замовчуванням виконується компіляція 32-розрядного драйвера Windows XP.
+За необхідності скориставшись меню "Менеджер\Налаштування проекту" можна 
+змінити/прибрати/додати параметри у
+12=0,O,$B\radasmbuild.cmd $A chk wxp,3 

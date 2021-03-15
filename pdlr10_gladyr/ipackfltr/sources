@@ -1,0 +1,9 @@
+TARGETNAME=ipackfltr
+TARGETPATH=SYS
+TARGETTYPE=DRIVER
+
+USER_C_FLAGS = /FAs
+
+SOURCES =	ipackfltr.c	\
+			ipackfltr.rc
+

@@ -1,0 +1,21 @@
+#include <windows.h>
+
+#define VS_VERSION_INFO 1
+#define VER_PRODUCTMAJORVERSION		1
+#define VER_PRODUCTMINORVERSION		0
+#define VER_PRODUCTBUILD				1
+#define VER_PRODUCTBUILD_QFE			0
+#define BETA
+#define VER_FILETYPE						VFT_APP
+
+#define VER_PRODUCTNAME_STR			"SelfDefenceSCP"
+#define VER_INTERNALNAME_STR			"SelfDefenceSCP.exe"
+
+#define VER_COMPANYNAME_STR			"КІС ФЕКІ КрНУ"
+#define VER_LEGALCOPYRIGHT_YEARS_STR	"2012-2013"
+#define VER_LEGALCOPYRIGHT_STR			"Copyright © " VER_COMPANYNAME_STR " " VER_LEGALCOPYRIGHT_YEARS_STR
+#define VER_FILEDESCRIPTION_STR			"SelfDefenceSCP"
+#define VER_PRIVATEBUILD_STR			"Для внутрішнього використання " VER_COMPANYNAME_STR
+#define VER_VERSION_UNICODE_LANG		"042204B0"
+#define VER_VERSION_TRANSLATION		0x0422, 0x04B0
+#include "VerInfo.Ver"

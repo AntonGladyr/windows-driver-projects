@@ -1,0 +1,2 @@
+1>warnings in directory c:\radasm\wdk\projects\driver_projects\pdlr10_gladyr\ipackfltrscp
+1>c:\radasm\wdk\projects\driver_projects\pdlr10_gladyr\ipackfltrscp\ipackfltrscp.c(69) : warning C4002: too many actual parameters for macro '_TEXT'

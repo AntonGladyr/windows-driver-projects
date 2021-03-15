@@ -1,0 +1,42 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining c:\radasm\wdk\projects\driver_projects\pdlr06_gladyr\pcidevenumerator directory for files to compile.
+1>Compiling and Linking c:\radasm\wdk\projects\driver_projects\pdlr06_gladyr\pcidevenumerator *************
+1>'nmake.exe /nologo BUILDMSG=Stop. -i /nologo /f c:\winddk\bin\makefile.def BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+1>c:\radasm\wdk\projects\driver_projects\pdlr06_gladyr\pcidevenumerator: TARGETPATH is EXE
+1>BUILDMSG: _NT_TARGET_VERSION SET TO WINXP
+1> link.exe /out:EXE\i386\PCIDevEnumerator.exe /machine:ix86 @c:\radasm\wdk\projects\driver_projects\pdlr06_gladyr\pcidevenumerator\objchk_wxp_x86\i386\lnk.rsp
+1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>/MERGE:_PAGE=PAGE 
+1>/MERGE:_TEXT=.text 
+1>/SECTION:INIT,d 
+1>/OPT:REF 
+1>/OPT:ICF 
+1>/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221 
+1>/INCREMENTAL:NO 
+1>/release 
+1>/NODEFAULTLIB 
+1>/WX 
+1>/debug 
+1>/debugtype:cv,fixup,pdata 
+1>/version:6.1 
+1>/osversion:6.1 
+1>/functionpadmin:5 
+1>/safeseh 
+1>/nxcompat 
+1>/merge:.rdata=.text 
+1>/pdbcompress 
+1>/STACK:0x40000,0x2000 
+1>/tsaware 
+1>/dynamicbase 
+1>/subsystem:console,5.01 
+1>/base:@C:\WinDDK\bin\coffbase.txt,usermode 
+1>/entry:mainCRTStartup 
+1>c:\radasm\wdk\projects\driver_projects\pdlr06_gladyr\pcidevenumerator\objchk_wxp_x86\i386\pcidevenumerator.res 
+1>c:\radasm\wdk\projects\driver_projects\pdlr06_gladyr\pcidevenumerator\objchk_wxp_x86\i386\pcidevenumerator.obj 
+1>c:\winddk\lib\wxp\i386\advapi32.lib 
+1>c:\winddk\lib\wxp\i386\kernel32.lib 
+1>c:\winddk\lib\wxp\i386\msvcrt_winxp.obj 
+1>C:\WinDDK\lib\crt\i386\msvcrt.lib 
+1>c:\winddk\lib\wxp\i386\user32.lib 
+1>c:\winddk\lib\wxp\i386\sehupd.lib 

@@ -1,0 +1,8 @@
+TARGETNAME=pciconfigviewer
+TARGETPATH=SYS
+TARGETTYPE=DRIVER
+
+USER_C_FLAGS = /FAs
+
+SOURCES =	pciconfigviewer.c	\
+			pciconfigviewer.rc

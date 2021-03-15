@@ -1,0 +1,24 @@
+TARGETNAME = IpackFltrSCP
+TARGETTYPE = PROGRAM
+TARGETPATH = EXE
+
+UMTYPE = console# консольний
+UMENTRY = main	# ANSI-додаток
+USE_MSVCRT = 1	# використовувати RTL динамічних бібліотек Msvcrt*.dll
+				# USE_LIBCMT - використовувати статичні бібліотеки
+				# USE_NTDLL -  використовувати Ntdll.dll
+				# USE_NOLIBS - НЕ використовувати RTL
+
+#C_DEFINES		= $(C_DEFINES)  /D_UNICODE /DUNICODE
+USER_C_FLAGS = /FAs /TC /GF
+							
+MSC_OPTIMIZATION = /Od /Oi	# прибрати оптимізацію для спрощення відлагодження
+							# потрібно закоментувати при збиранні фінальної версії
+
+TARGETLIBS	=	$(SDK_LIB_PATH)\user32.lib	\
+				$(SDK_LIB_PATH)\Ws2_32.lib
+
+INCLUDES	=	$(SDK_INC_PATH);
+
+SOURCES		=	IpackFltrSCP.c 	\
+					IpackFltrSCP.rc

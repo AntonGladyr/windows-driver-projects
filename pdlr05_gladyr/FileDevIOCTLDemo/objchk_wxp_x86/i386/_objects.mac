@@ -1,0 +1,17 @@
+
+
+386_OBJECTS=\
+ $(OBJ_PATH)\$O\filedevioctldemo.obj \
+
+
+_RES_FILE=$(OBJ_PATH)\$O\filedevioctldemo.res
+
+
+
+# lowercased
+BASEDIR=c:\winddk
+OBJECT_ROOT=c:\winddk
+MAKEDIR_LOWERCASE=c:\radasm\wdk\projects\driver_projects\pdlr05_gladyr\filedevioctldemo
+OBJ_PATH=c:\radasm\wdk\projects\driver_projects\pdlr05_gladyr\filedevioctldemo
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0

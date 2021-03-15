@@ -1,0 +1,22 @@
+TARGETNAME	= PhysicalDrive
+TARGETTYPE	= PROGRAM
+TARGETPATH	= EXE
+
+UMTYPE		= console
+UMENTRY	= main
+USE_MSVCRT = 1
+
+#C_DEFINES		= $(C_DEFINES)  /D_UNICODE /DUNICODE
+USER_C_FLAGS	= /FAs
+							
+MSC_OPTIMIZATION = /Od /Oi
+
+TARGETLIBS	=	$(SDK_LIB_PATH)\kernel32.lib	\
+				$(SDK_LIB_PATH)\user32.lib
+
+
+INCLUDES	=	$(SDK_INC_PATH);
+
+SOURCES	=	PhysicalDrive.c \
+				PhysicalDrive.rc
+

@@ -1,0 +1,17 @@
+
+
+386_OBJECTS=\
+ $(OBJ_PATH)\$O\filedevioscp.obj \
+
+
+_RES_FILE=$(OBJ_PATH)\$O\filedevioscp.res
+
+
+
+# lowercased
+BASEDIR=c:\winddk
+OBJECT_ROOT=c:\winddk
+MAKEDIR_LOWERCASE=c:\radasm\wdk\projects\driver_projects\pdlr04_gladyr\filedevioscp
+OBJ_PATH=c:\radasm\wdk\projects\driver_projects\pdlr04_gladyr\filedevioscp
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0

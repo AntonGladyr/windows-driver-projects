@@ -1,0 +1,8 @@
+TARGETNAME = SimpleLegacyDrv
+TARGETPATH = SYS
+TARGETTYPE = DRIVER
+
+USER_C_FLAGS = /FAs
+
+SOURCES =	SimpleLegacyDrv.c	\
+			SimpleLegacyDrv.rc

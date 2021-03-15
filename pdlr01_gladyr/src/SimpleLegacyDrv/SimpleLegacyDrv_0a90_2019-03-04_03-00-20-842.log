@@ -1,0 +1,1618 @@
+Opened log file 'C:\RadASM\wdk\Projects\driver_projects\pdlr01_gladyr\src\SimpleLegacyDrv\SimpleLegacyDrv_0a90_2019-03-04_03-00-20-842.log'
+kd> u
+SimpleLegacyDrv!DriverEntry+0x15 [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 12]:
+fa0936a5 cc              int     3
+fa0936a6 68b03809fa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0938b0)
+fa0936ab e8d6fdffff      call    SimpleLegacyDrv!DbgPrint (fa093486)
+fa0936b0 83c404          add     esp,4
+fa0936b3 8b4d0c          mov     ecx,dword ptr [ebp+0Ch]
+fa0936b6 51              push    ecx
+fa0936b7 68903809fa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa093890)
+fa0936bc e8c5fdffff      call    SimpleLegacyDrv!DbgPrint (fa093486)
+kd> p
+SimpleLegacyDrv!DriverEntry+0x16:
+fa0936a6 68b03809fa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0938b0)
+kd> p
+
+Start DriverEntrySimpleLegacyDrv!DriverEntry+0x23:
+fa0936b3 8b4d0c          mov     ecx,dword ptr [ebp+0Ch]
+kd> ub
+SimpleLegacyDrv!DriverEntry+0x5 [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 9]:
+fa093695 83ec0c          sub     esp,0Ch
+fa093698 c745fc00000000  mov     dword ptr [ebp-4],0
+fa09369f 33c0            xor     eax,eax
+fa0936a1 668945f8        mov     word ptr [ebp-8],ax
+fa0936a5 cc              int     3
+fa0936a6 68b03809fa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0938b0)
+fa0936ab e8d6fdffff      call    SimpleLegacyDrv!DbgPrint (fa093486)
+fa0936b0 83c404          add     esp,4
+kd> t
+nt!DbgPrint:
+804ff079 8bff            mov     edi,edi
+kd> t
+nt!DbgPrint+0x2:
+804ff07b 55              push    ebp
+kd> t
+nt!DbgPrint+0x3:
+804ff07c 8bec            mov     ebp,esp
+kd> pt
+
+RegistryPath : \REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\SimpleLegacyDrvnt!DbgPrint+0x1b:
+804ff094 c3              ret
+kd> p
+SimpleLegacyDrv!DriverEntry+0x31:
+fa0936c1 83c408          add     esp,8
+kd> p
+SimpleLegacyDrv!DriverEntry+0x34:
+fa0936c4 ff15003509fa    call    dword ptr [SimpleLegacyDrv!_imp__KeGetCurrentIrql (fa093500)]
+kd> p
+
+Current IRQL : 0SimpleLegacyDrv!DriverEntry+0x4b:
+fa0936db ff15103509fa    call    dword ptr [SimpleLegacyDrv!_imp__IoGetCurrentProcess (fa093510)]
+kd> p
+SimpleLegacyDrv!DriverEntry+0x54:
+fa0936e4 a1143509fa      mov     eax,dword ptr [SimpleLegacyDrv!_imp__PsInitialSystemProcess (fa093514)]
+kd> p
+
+Current process : 0x817CC9C8 ( System Process ) SimpleLegacyDrv!DriverEntry+0x85:
+fa093715 668c4df8        mov     word ptr [ebp-8],cs
+kd> g
+
+CS : 0x0008 ( Index = 1, TI = 0, CPL = 0 ) 
+Finish DriverEntryExtended Display Support.
+Display with ID=0 already enabled
+Display [ID=0, name='\\.\DISPLAY1']: Changing resolution to 1280x683
+00:04:20.204155 timesync vgsvcTimeSyncWorker: Radical host time change: 48 173 522 000 000ns (HostNow=1 551 699 296 949 000 000 ns HostLast=1 551 651 123 427 000 000 ns)
+00:04:30.218555 timesync vgsvcTimeSyncWorker: Radical guest time change: 48 162 521 347 400ns (GuestNow=1 551 699 306 963 400 000 ns GuestLast=1 551 651 144 442 052 600 ns fSetTimeLastLoop=true )
+watchdog!WdUpdateRecoveryState: Recovery enabled.
+Extended Display Support.
+Display with ID=0 already enabled
+Display [ID=0, name='\\.\DISPLAY1']: Changing resolution to 1280x800
+Extended Display Support.
+Display with ID=0 already enabled
+Already at desired resolution. No Change.
+Extended Display Support.
+Display with ID=0 already enabled
+Display [ID=0, name='\\.\DISPLAY1']: Changing resolution to 1280x800
+Break instruction exception - code 80000003 (first chance)
+SimpleLegacyDrv!DriverEntry+0x15:
+fa11d6a5 cc              int     3
+kd> pc
+SimpleLegacyDrv!DriverEntry+0x1b:
+fa11d6ab e8d6fdffff      call    SimpleLegacyDrv!DbgPrint (fa11d486)
+kd> db esp
+f9ea7c6c  b0 d8 11 fa 05 00 00 00-00 00 5a 80 00 00 00 00  ..........Z.....
+f9ea7c7c  4c 7d ea f9 9d 39 5a 80-50 43 67 81 00 c0 35 81  L}...9Z.PCg...5.
+f9ea7c8c  00 00 00 00 f4 7c 96 f7-00 00 00 00 18 00 00 00  .....|..........
+f9ea7c9c  00 00 00 00 c0 7c ea f9-10 00 00 00 00 00 00 00  .....|..........
+f9ea7cac  00 00 00 00 50 43 67 81-70 7d ea f9 90 34 68 81  ....PCg.p}...4h.
+f9ea7cbc  00 c0 35 81 2e 00 2e 00-48 72 37 81 b0 78 65 81  ..5.....Hr7..xe.
+f9ea7ccc  50 43 67 81 b8 9a 5a 81-2e 00 00 00 1c 03 00 80  PCg...Z.........
+f9ea7cdc  00 d0 11 fa d8 06 00 00-1e 00 20 00 b8 ba 85 e1  .......... .....
+kd> db poi(esp)
+fa11d8b0  0a 53 74 61 72 74 20 44-72 69 76 65 72 45 6e 74  .Start DriverEnt
+fa11d8c0  72 79 00 cc 08 09 00 00-00 00 00 00 00 00 00 00  ry..............
+fa11d8d0  66 09 00 00 08 05 00 00-00 09 00 00 00 00 00 00  f...............
+fa11d8e0  00 00 00 00 88 09 00 00-00 05 00 00 00 00 00 00  ................
+fa11d8f0  00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00  ................
+fa11d900  74 d9 11 fa 00 00 00 00-58 d9 11 fa 4c d9 11 fa  t.......X...L...
+fa11d910  36 d9 11 fa 1c d9 11 fa-00 00 00 00 77 03 50 73  6...........w.Ps
+fa11d920  49 6e 69 74 69 61 6c 53-79 73 74 65 6d 50 72 6f  InitialSystemPro
+kd> da poi(esp)
+fa11d8b0  ".Start DriverEntry"
+kd> dda esp
+f9ea7c6c  fa11d8b0 ".Start DriverEntry"
+f9ea7c70  00000005
+f9ea7c74  805a0000 "...`A...E._^[..."
+f9ea7c78  00000000
+f9ea7c7c  f9ea7d4c "t}..s<Z..."
+f9ea7c80  805a399d ";...h....E.....=B."
+f9ea7c84  81674350 "."
+f9ea7c88  8135c000 "~"
+f9ea7c8c  00000000
+f9ea7c90  f7967cf4 ""
+f9ea7c94  00000000
+f9ea7c98  00000018
+f9ea7c9c  00000000
+f9ea7ca0  f9ea7cc0 "."
+f9ea7ca4  00000010
+f9ea7ca8  00000000
+f9ea7cac  00000000
+f9ea7cb0  81674350 "."
+f9ea7cb4  f9ea7d70 ""
+f9ea7cb8  81683490 "........"
+f9ea7cbc  8135c000 "~"
+f9ea7cc0  002e002e
+f9ea7cc4  81377248 "\"
+f9ea7cc8  816578b0 "."
+f9ea7ccc  81674350 "."
+f9ea7cd0  815a9ab8 "..U..zh.........."
+f9ea7cd4  0000002e
+f9ea7cd8  8000031c
+f9ea7cdc  fa11d000 "MZ."
+f9ea7ce0  000006d8
+f9ea7ce4  0020001e
+f9ea7ce8  e185bab8 "S"
+kd> dda esp L1
+f9ea7c6c  fa11d8b0 ".Start DriverEntry"
+kd> ddu esp
+f9ea7c6c  fa11d8b0 "???????????"
+f9ea7c70  00000005
+f9ea7c74  805a0000 ".?.???????.?.???????????.???????.?"
+f9ea7c78  00000000
+f9ea7c7c  f9ea7d4c "????.?."
+f9ea7c80  805a399d "???.??.?ò??????.?ò.???.s?..?.?.?,?..?.?,??p?.?.??..t???"
+f9ea7c84  81674350 ".?"
+f9ea7c88  8135c000 "~~??\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\Sim"
+f9ea7c8c  00000000
+f9ea7c90  f7967cf4 ""
+f9ea7c94  00000000
+f9ea7c98  00000018
+f9ea7c9c  00000000
+f9ea7ca0  f9ea7cc0 "..????????."
+f9ea7ca4  00000010
+f9ea7ca8  00000000
+f9ea7cac  00000000
+f9ea7cb0  81674350 ".?"
+f9ea7cb4  f9ea7d70 ""
+f9ea7cb8  81683490 ".??u"
+f9ea7cbc  8135c000 "~~??\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\Sim"
+f9ea7cc0  002e002e
+f9ea7cc4  81377248 "\Driver\SimpleLegacyDrv"
+f9ea7cc8  816578b0 ".C"
+f9ea7ccc  81674350 ".?"
+f9ea7cd0  815a9ab8 "????....."
+f9ea7cd4  0000002e
+f9ea7cd8  8000031c
+f9ea7cdc  fa11d000 "?.."
+f9ea7ce0  000006d8
+f9ea7ce4  0020001e
+f9ea7ce8  e185bab8 "SimpleLegacyDrv"
+kd> pr
+
+Start DriverEntryeax=00000000 ebx=00000000 ecx=804ff063 edx=00000012 esi=e185bad8 edi=81674350
+eip=fa11d6b3 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00200292
+SimpleLegacyDrv!DriverEntry+0x23:
+fa11d6b3 8b4d0c          mov     ecx,dword ptr [ebp+0Ch] ss:0010:f9ea7c88=8135c000
+kd> pr
+
+RegistryPath : \REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\SimpleLegacyDrvSimpleLegacyDrv!DriverEntry+0x34:
+fa11d6c4 ff1500d511fa    call    dword ptr [SimpleLegacyDrv!_imp__KeGetCurrentIrql (fa11d500)]
+kd> pr
+
+Current IRQL : 0eax=00000000 ebx=00000000 ecx=804ff063 edx=00000011 esi=e185bad8 edi=81674350
+eip=fa11d6db esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00200292
+SimpleLegacyDrv!DriverEntry+0x4b:
+fa11d6db ff1510d511fa    call    dword ptr [SimpleLegacyDrv!_imp__IoGetCurrentProcess (fa11d510)] ds:0023:fa11d510={nt!IoGetCurrentProcess (804e464f)}
+kd> dt nt!_UNICODE_STRING
+   +0x000 Length           : Uint2B
+   +0x002 MaximumLength    : Uint2B
+   +0x004 Buffer           : Ptr32 Uint2B
+kd> dt RegistryPath
+Local var @ 0xf9ea7c88 Type _UNICODE_STRING*
+0x8135c000 
+ "\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\SimpleLegacyDrv"
+   +0x000 Length           : 0x7e
+   +0x002 MaximumLength    : 0x7e
+   +0x004 Buffer           : 0x8135c008  "\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\SimpleLegacyDrv"
+kd> dt nt!_DRIVER_OBJECT
+   +0x000 Type             : Int2B
+   +0x002 Size             : Int2B
+   +0x004 DeviceObject     : Ptr32 _DEVICE_OBJECT
+   +0x008 Flags            : Uint4B
+   +0x00c DriverStart      : Ptr32 Void
+   +0x010 DriverSize       : Uint4B
+   +0x014 DriverSection    : Ptr32 Void
+   +0x018 DriverExtension  : Ptr32 _DRIVER_EXTENSION
+   +0x01c DriverName       : _UNICODE_STRING
+   +0x024 HardwareDatabase : Ptr32 _UNICODE_STRING
+   +0x028 FastIoDispatch   : Ptr32 _FAST_IO_DISPATCH
+   +0x02c DriverInit       : Ptr32     long 
+   +0x030 DriverStartIo    : Ptr32     void 
+   +0x034 DriverUnload     : Ptr32     void 
+   +0x038 MajorFunction    : [28] Ptr32     long 
+kd> dt DriverObject
+Local var @ 0xf9ea7c84 Type _DRIVER_OBJECT*
+0x81674350 
+   +0x000 Type             : 0n4
+   +0x002 Size             : 0n168
+   +0x004 DeviceObject     : (null) 
+   +0x008 Flags            : 2
+   +0x00c DriverStart      : 0xfa11d000 Void
+   +0x010 DriverSize       : 0xf00
+   +0x014 DriverSection    : 0x815a9ab8 Void
+   +0x018 DriverExtension  : 0x816743f8 _DRIVER_EXTENSION
+   +0x01c DriverName       : _UNICODE_STRING "\Driver\SimpleLegacyDrv"
+   +0x024 HardwareDatabase : 0x8068fa90 _UNICODE_STRING "\REGISTRY\MACHINE\HARDWARE\DESCRIPTION\SYSTEM"
+   +0x028 FastIoDispatch   : (null) 
+   +0x02c DriverInit       : 0xfa11d7b1     long  SimpleLegacyDrv!GsDriverEntry+0
+   +0x030 DriverStartIo    : (null) 
+   +0x034 DriverUnload     : (null) 
+   +0x038 MajorFunction    : [28] 0x804fa87e     long  nt!IopInvalidDeviceRequest+0
+kd> dt DriverObject -r1
+Local var @ 0xf9ea7c84 Type _DRIVER_OBJECT*
+0x81674350 
+   +0x000 Type             : 0n4
+   +0x002 Size             : 0n168
+   +0x004 DeviceObject     : (null) 
+   +0x008 Flags            : 2
+   +0x00c DriverStart      : 0xfa11d000 Void
+   +0x010 DriverSize       : 0xf00
+   +0x014 DriverSection    : 0x815a9ab8 Void
+   +0x018 DriverExtension  : 0x816743f8 _DRIVER_EXTENSION
+      +0x000 DriverObject     : 0x81674350 _DRIVER_OBJECT
+      +0x004 AddDevice        : (null) 
+      +0x008 Count            : 0
+      +0x00c ServiceKeyName   : _UNICODE_STRING "SimpleLegacyDrv"
+   +0x01c DriverName       : _UNICODE_STRING "\Driver\SimpleLegacyDrv"
+      +0x000 Length           : 0x2e
+      +0x002 MaximumLength    : 0x2e
+      +0x004 Buffer           : 0xe185bb48  "\Driver\SimpleLegacyDrv"
+   +0x024 HardwareDatabase : 0x8068fa90 _UNICODE_STRING "\REGISTRY\MACHINE\HARDWARE\DESCRIPTION\SYSTEM"
+      +0x000 Length           : 0x5a
+      +0x002 MaximumLength    : 0x5c
+      +0x004 Buffer           : 0x805cca18  "\REGISTRY\MACHINE\HARDWARE\DESCRIPTION\SYSTEM"
+   +0x028 FastIoDispatch   : (null) 
+   +0x02c DriverInit       : 0xfa11d7b1     long  SimpleLegacyDrv!GsDriverEntry+0
+   +0x030 DriverStartIo    : (null) 
+   +0x034 DriverUnload     : (null) 
+   +0x038 MajorFunction    : [28] 0x804fa87e     long  nt!IopInvalidDeviceRequest+0
+kd> dt DriverObject -r2
+Local var @ 0xf9ea7c84 Type _DRIVER_OBJECT*
+0x81674350 
+   +0x000 Type             : 0n4
+   +0x002 Size             : 0n168
+   +0x004 DeviceObject     : (null) 
+   +0x008 Flags            : 2
+   +0x00c DriverStart      : 0xfa11d000 Void
+   +0x010 DriverSize       : 0xf00
+   +0x014 DriverSection    : 0x815a9ab8 Void
+   +0x018 DriverExtension  : 0x816743f8 _DRIVER_EXTENSION
+      +0x000 DriverObject     : 0x81674350 _DRIVER_OBJECT
+         +0x000 Type             : 0n4
+         +0x002 Size             : 0n168
+         +0x004 DeviceObject     : (null) 
+         +0x008 Flags            : 2
+         +0x00c DriverStart      : 0xfa11d000 Void
+         +0x010 DriverSize       : 0xf00
+         +0x014 DriverSection    : 0x815a9ab8 Void
+         +0x018 DriverExtension  : 0x816743f8 _DRIVER_EXTENSION
+         +0x01c DriverName       : _UNICODE_STRING "\Driver\SimpleLegacyDrv"
+         +0x024 HardwareDatabase : 0x8068fa90 _UNICODE_STRING "\REGISTRY\MACHINE\HARDWARE\DESCRIPTION\SYSTEM"
+         +0x028 FastIoDispatch   : (null) 
+         +0x02c DriverInit       : 0xfa11d7b1           long  SimpleLegacyDrv!GsDriverEntry+0
+         +0x030 DriverStartIo    : (null) 
+         +0x034 DriverUnload     : (null) 
+         +0x038 MajorFunction    : [28] 0x804fa87e           long  nt!IopInvalidDeviceRequest+0
+      +0x004 AddDevice        : (null) 
+      +0x008 Count            : 0
+      +0x00c ServiceKeyName   : _UNICODE_STRING "SimpleLegacyDrv"
+         +0x000 Length           : 0x1e
+         +0x002 MaximumLength    : 0x20
+         +0x004 Buffer           : 0x815d02d8  "SimpleLegacyDrv"
+   +0x01c DriverName       : _UNICODE_STRING "\Driver\SimpleLegacyDrv"
+      +0x000 Length           : 0x2e
+      +0x002 MaximumLength    : 0x2e
+      +0x004 Buffer           : 0xe185bb48  "\Driver\SimpleLegacyDrv"
+   +0x024 HardwareDatabase : 0x8068fa90 _UNICODE_STRING "\REGISTRY\MACHINE\HARDWARE\DESCRIPTION\SYSTEM"
+      +0x000 Length           : 0x5a
+      +0x002 MaximumLength    : 0x5c
+      +0x004 Buffer           : 0x805cca18  "\REGISTRY\MACHINE\HARDWARE\DESCRIPTION\SYSTEM"
+   +0x028 FastIoDispatch   : (null) 
+   +0x02c DriverInit       : 0xfa11d7b1     long  SimpleLegacyDrv!GsDriverEntry+0
+   +0x030 DriverStartIo    : (null) 
+   +0x034 DriverUnload     : (null) 
+   +0x038 MajorFunction    : [28] 0x804fa87e     long  nt!IopInvalidDeviceRequest+0
+kd> dt -b DriverObject
+Local var @ 0xf9ea7c84 Type _DRIVER_OBJECT*
+0x81674350 
+   +0x000 Type             : 0n4
+   +0x002 Size             : 0n168
+   +0x004 DeviceObject     : (null) 
+   +0x008 Flags            : 2
+   +0x00c DriverStart      : 0xfa11d000 
+   +0x010 DriverSize       : 0xf00
+   +0x014 DriverSection    : 0x815a9ab8 
+   +0x018 DriverExtension  : 0x816743f8 
+   +0x01c DriverName       : _UNICODE_STRING "\Driver\SimpleLegacyDrv"
+      +0x000 Length           : 0x2e
+      +0x002 MaximumLength    : 0x2e
+      +0x004 Buffer           : 0xe185bb48  "\Driver\SimpleLegacyDrv"
+   +0x024 HardwareDatabase : 0x8068fa90 
+   +0x028 FastIoDispatch   : (null) 
+   +0x02c DriverInit       : 0xfa11d7b1 
+   +0x030 DriverStartIo    : (null) 
+   +0x034 DriverUnload     : (null) 
+   +0x038 MajorFunction    : 
+    [00] 0x804fa87e 
+    [01] 0x804fa87e 
+    [02] 0x804fa87e 
+    [03] 0x804fa87e 
+    [04] 0x804fa87e 
+    [05] 0x804fa87e 
+    [06] 0x804fa87e 
+    [07] 0x804fa87e 
+    [08] 0x804fa87e 
+    [09] 0x804fa87e 
+    [10] 0x804fa87e 
+    [11] 0x804fa87e 
+    [12] 0x804fa87e 
+    [13] 0x804fa87e 
+    [14] 0x804fa87e 
+    [15] 0x804fa87e 
+    [16] 0x804fa87e 
+    [17] 0x804fa87e 
+    [18] 0x804fa87e 
+    [19] 0x804fa87e 
+    [20] 0x804fa87e 
+    [21] 0x804fa87e 
+    [22] 0x804fa87e 
+    [23] 0x804fa87e 
+    [24] 0x804fa87e 
+    [25] 0x804fa87e 
+    [26] 0x804fa87e 
+    [27] 0x804fa87e 
+kd> p
+eax=817cc9c8 ebx=00000000 ecx=804ff063 edx=00000011 esi=e185bad8 edi=81674350
+eip=fa11d6e4 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00200292
+SimpleLegacyDrv!DriverEntry+0x54:
+fa11d6e4 a114d511fa      mov     eax,dword ptr [SimpleLegacyDrv!_imp__PsInitialSystemProcess (fa11d514)] ds:0023:fa11d514={nt!PsInitialSystemProcess (80561454)}
+kd> dt process;dt nt!_EPROCESS poi(process)
+Local var @ 0xf9ea7c78 Type _EPROCESS*
+0x817cc9c8 
+   +0x000 Pcb              : _KPROCESS
+   +0x06c ProcessLock      : _EX_PUSH_LOCK
+   +0x070 CreateTime       : _LARGE_INTEGER 0x0
+   +0x078 ExitTime         : _LARGE_INTEGER 0x0
+   +0x080 RundownProtect   : _EX_RUNDOWN_REF
+   +0x084 UniqueProcessId  : 0x00000004 Void
+   +0x088 ActiveProcessLinks : _LIST_ENTRY [ 0x815370a8 - 0x80561358 ]
+   +0x090 QuotaUsage       : [3] 0
+   +0x09c QuotaPeak        : [3] 0
+   +0x0a8 CommitCharge     : 7
+   +0x0ac PeakVirtualSize  : 0x299000
+   +0x0b0 VirtualSize      : 0x1d5000
+   +0x0b4 SessionProcessLinks : _LIST_ENTRY [ 0x0 - 0x0 ]
+   +0x0bc DebugPort        : (null) 
+   +0x0c0 ExceptionPort    : (null) 
+   +0x0c4 ObjectTable      : 0xe1000d10 _HANDLE_TABLE
+   +0x0c8 Token            : _EX_FAST_REF
+   +0x0cc WorkingSetLock   : _FAST_MUTEX
+   +0x0ec WorkingSetPage   : 0
+   +0x0f0 AddressCreationLock : _FAST_MUTEX
+   +0x110 HyperSpaceLock   : 0
+   +0x114 ForkInProgress   : (null) 
+   +0x118 HardwareTrigger  : 0
+   +0x11c VadRoot          : 0x817f1078 Void
+   +0x120 VadHint          : 0x817f1078 Void
+   +0x124 CloneRoot        : (null) 
+   +0x128 NumberOfPrivatePages : 3
+   +0x12c NumberOfLockedPages : 0
+   +0x130 Win32Process     : (null) 
+   +0x134 Job              : (null) 
+   +0x138 SectionObject    : (null) 
+   +0x13c SectionBaseAddress : (null) 
+   +0x140 QuotaBlock       : 0x80561400 _EPROCESS_QUOTA_BLOCK
+   +0x144 WorkingSetWatch  : (null) 
+   +0x148 Win32WindowStation : (null) 
+   +0x14c InheritedFromUniqueProcessId : (null) 
+   +0x150 LdtInformation   : (null) 
+   +0x154 VadFreeHint      : (null) 
+   +0x158 VdmObjects       : (null) 
+   +0x15c DeviceMap        : 0xe1001070 Void
+   +0x160 PhysicalVadList  : _LIST_ENTRY [ 0x817ccb28 - 0x817ccb28 ]
+   +0x168 PageDirectoryPte : _HARDWARE_PTE
+   +0x168 Filler           : 0
+   +0x170 Session          : (null) 
+   +0x174 ImageFileName    : [16]  "System"
+   +0x184 JobLinks         : _LIST_ENTRY [ 0x0 - 0x0 ]
+   +0x18c LockedPagesList  : (null) 
+   +0x190 ThreadListHead   : _LIST_ENTRY [ 0x817cc97c - 0x812d23e4 ]
+   +0x198 SecurityPort     : 0xe162cd88 Void
+   +0x19c PaeTop           : (null) 
+   +0x1a0 ActiveThreads    : 0x36
+   +0x1a4 GrantedAccess    : 0x1f0fff
+   +0x1a8 DefaultHardErrorProcessing : 1
+   +0x1ac LastThreadExitStatus : 0n0
+   +0x1b0 Peb              : (null) 
+   +0x1b4 PrefetchTrace    : _EX_FAST_REF
+   +0x1b8 ReadOperationCount : _LARGE_INTEGER 0x65
+   +0x1c0 WriteOperationCount : _LARGE_INTEGER 0x18e
+   +0x1c8 OtherOperationCount : _LARGE_INTEGER 0xd12
+   +0x1d0 ReadTransferCount : _LARGE_INTEGER 0x68d68
+   +0x1d8 WriteTransferCount : _LARGE_INTEGER 0x2371ee
+   +0x1e0 OtherTransferCount : _LARGE_INTEGER 0x46b5b
+   +0x1e8 CommitChargeLimit : 0
+   +0x1ec CommitChargePeak : 0x1cc
+   +0x1f0 AweInfo          : (null) 
+   +0x1f4 SeAuditProcessCreationInfo : _SE_AUDIT_PROCESS_CREATION_INFO
+   +0x1f8 Vm               : _MMSUPPORT
+   +0x238 LastFaultCount   : 0
+   +0x23c ModifiedPageCount : 0x95d
+   +0x240 NumberOfVads     : 4
+   +0x244 JobStatus        : 0
+   +0x248 Flags            : 0x40000
+   +0x248 CreateReported   : 0y0
+   +0x248 NoDebugInherit   : 0y0
+   +0x248 ProcessExiting   : 0y0
+   +0x248 ProcessDelete    : 0y0
+   +0x248 Wow64SplitPages  : 0y0
+   +0x248 VmDeleted        : 0y0
+   +0x248 OutswapEnabled   : 0y0
+   +0x248 Outswapped       : 0y0
+   +0x248 ForkFailed       : 0y0
+   +0x248 HasPhysicalVad   : 0y0
+   +0x248 AddressSpaceInitialized : 0y00
+   +0x248 SetTimerResolution : 0y0
+   +0x248 BreakOnTermination : 0y0
+   +0x248 SessionCreationUnderway : 0y0
+   +0x248 WriteWatch       : 0y0
+   +0x248 ProcessInSession : 0y0
+   +0x248 OverrideAddressSpace : 0y0
+   +0x248 HasAddressSpace  : 0y1
+   +0x248 LaunchPrefetched : 0y0
+   +0x248 InjectInpageErrors : 0y0
+   +0x248 VmTopDown        : 0y0
+   +0x248 Unused3          : 0y0
+   +0x248 Unused4          : 0y0
+   +0x248 VdmAllowed       : 0y0
+   +0x248 Unused           : 0y00000 (0)
+   +0x248 Unused1          : 0y0
+   +0x248 Unused2          : 0y0
+   +0x24c ExitStatus       : 0n259
+   +0x250 NextPageColor    : 0x4272
+   +0x252 SubSystemMinorVersion : 0 ''
+   +0x253 SubSystemMajorVersion : 0 ''
+   +0x252 SubSystemVersion : 0
+   +0x254 PriorityClass    : 0x2 ''
+   +0x255 WorkingSetAcquiredUnsafe : 0 ''
+   +0x258 Cookie           : 0
+kd> !thread
+THREAD 817c83c8  Cid 0004.003c  Teb: 00000000 Win32Thread: 00000000 RUNNING on processor 0
+Not impersonating
+DeviceMap                 e1001070
+Owning Process            0       Image:         <Unknown>
+Attached Process          817cc9c8       Image:         System
+Wait Start TickCount      57100          Ticks: 2 (0:00:00:00.020)
+Context Switch Count      4888             
+UserTime                  00:00:00.000
+KernelTime                00:00:02.113
+Start Address nt!ExpWorkerThread (0x804e4196)
+Stack Init f9ea8000 Current f9ea7bd4 Base f9ea8000 Limit f9ea5000 Call 0
+Priority 12 BasePriority 12 PriorityDecrement 0 DecrementCount 16
+ChildEBP RetAddr  Args to Child              
+f9ea7c7c 805a399d 81674350 8135c000 00000000 SimpleLegacyDrv!DriverEntry+0x54 (FPO: [Non-Fpo]) (CONV: stdcall) [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 17]
+f9ea7d4c 805a3c73 8000031c 00000001 00000000 nt!IopLoadDriver+0x66d (FPO: [Non-Fpo])
+f9ea7d74 804e426b 8000031c 00000000 817c83c8 nt!IopLoadUnloadDriver+0x45 (FPO: [Non-Fpo])
+f9ea7dac 8057aeff f7967cf4 00000000 00000000 nt!ExpWorkerThread+0x100 (FPO: [Non-Fpo])
+f9ea7ddc 804f88ea 804e4196 00000001 00000000 nt!PspSystemThreadStartup+0x34 (FPO: [Non-Fpo])
+00000000 00000000 00000000 00000000 00000000 nt!KiThreadStartup+0x16
+
+kd> g
+
+Current process : 0x817CC9C8 ( System Process ) 
+CS : 0x0008 ( Index = 1, TI = 0, CPL = 0 ) 
+Finish DriverEntryBreak instruction exception - code 80000003 (first chance)
+eax=00000000 ebx=00000000 ecx=bb40e64e edx=1b730002 esi=e10f64b8 edi=8154ec08
+eip=fa0e66a5 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+SimpleLegacyDrv!DriverEntry+0x15:
+fa0e66a5 cc              int     3
+kd> u fa0e66a5; eb fa0e66a5 90; u fa0e66a5
+SimpleLegacyDrv!DriverEntry+0x15 [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 12]:
+fa0e66a5 cc              int     3
+fa0e66a6 68b0680efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e68b0)
+fa0e66ab e8d6fdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+fa0e66b0 83c404          add     esp,4
+fa0e66b3 8b4d0c          mov     ecx,dword ptr [ebp+0Ch]
+fa0e66b6 51              push    ecx
+fa0e66b7 6890680efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e6890)
+fa0e66bc e8c5fdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+SimpleLegacyDrv!DriverEntry+0x15 [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 12]:
+fa0e66a5 90              nop
+fa0e66a6 68b0680efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e68b0)
+fa0e66ab e8d6fdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+fa0e66b0 83c404          add     esp,4
+fa0e66b3 8b4d0c          mov     ecx,dword ptr [ebp+0Ch]
+fa0e66b6 51              push    ecx
+fa0e66b7 6890680efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e6890)
+fa0e66bc e8c5fdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+kd> l-t
+Source options are 0:
+    None
+kd> p
+eax=00000000 ebx=00000000 ecx=bb40e64e edx=1b730002 esi=e10f64b8 edi=8154ec08
+eip=fa0e66a6 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+SimpleLegacyDrv!DriverEntry+0x16:
+fa0e66a6 68b0680efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e68b0)
+kd> p
+eax=00000000 ebx=00000000 ecx=bb40e64e edx=1b730002 esi=e10f64b8 edi=8154ec08
+eip=fa0e66ab esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+SimpleLegacyDrv!DriverEntry+0x1b:
+fa0e66ab e8d6fdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+kd> p
+
+Start DriverEntryeax=00000000 ebx=00000000 ecx=804ff063 edx=00000012 esi=e10f64b8 edi=8154ec08
+eip=fa0e66b0 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl nz ac po cy
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000213
+SimpleLegacyDrv!DriverEntry+0x20:
+fa0e66b0 83c404          add     esp,4
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=00000012 esi=e10f64b8 edi=8154ec08
+eip=fa0e66b3 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x23:
+fa0e66b3 8b4d0c          mov     ecx,dword ptr [ebp+0Ch] ss:0010:f9ea7c88=8135c000
+kd> p
+eax=00000000 ebx=00000000 ecx=8135c000 edx=00000012 esi=e10f64b8 edi=8154ec08
+eip=fa0e66b6 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x26:
+fa0e66b6 51              push    ecx
+kd> p
+eax=00000000 ebx=00000000 ecx=8135c000 edx=00000012 esi=e10f64b8 edi=8154ec08
+eip=fa0e66b7 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x27:
+fa0e66b7 6890680efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e6890)
+kd> p
+eax=00000000 ebx=00000000 ecx=8135c000 edx=00000012 esi=e10f64b8 edi=8154ec08
+eip=fa0e66bc esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x2c:
+fa0e66bc e8c5fdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+kd> p
+
+RegistryPath : \REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\SimpleLegacyDrveax=00000000 ebx=00000000 ecx=804ff063 edx=0000004f esi=e10f64b8 edi=8154ec08
+eip=fa0e66c1 esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei pl nz ac po cy
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000213
+SimpleLegacyDrv!DriverEntry+0x31:
+fa0e66c1 83c408          add     esp,8
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=0000004f esi=e10f64b8 edi=8154ec08
+eip=fa0e66c4 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x34:
+fa0e66c4 ff1500650efa    call    dword ptr [SimpleLegacyDrv!_imp__KeGetCurrentIrql (fa0e6500)] ds:0023:fa0e6500={hal!KeGetCurrentIrql (806ef2a4)}
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=0000004f esi=e10f64b8 edi=8154ec08
+eip=fa0e66ca esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x3a:
+fa0e66ca 0fb6d0          movzx   edx,al
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e66cd esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x3d:
+fa0e66cd 52              push    edx
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e66ce esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x3e:
+fa0e66ce 6870680efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e6870)
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e66d3 esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x43:
+fa0e66d3 e8aefdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+kd> p
+
+Current IRQL : 0eax=00000000 ebx=00000000 ecx=804ff063 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e66d8 esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei pl nz ac po cy
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000213
+SimpleLegacyDrv!DriverEntry+0x48:
+fa0e66d8 83c408          add     esp,8
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e66db esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+SimpleLegacyDrv!DriverEntry+0x4b:
+fa0e66db ff1510650efa    call    dword ptr [SimpleLegacyDrv!_imp__IoGetCurrentProcess (fa0e6510)] ds:0023:fa0e6510={nt!IoGetCurrentProcess (804e464f)}
+kd> k;kb;kc;kd;kp;kP;kv
+ChildEBP RetAddr  
+f9ea7c7c 805a399d SimpleLegacyDrv!DriverEntry+0x4b [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 16]
+f9ea7d4c 805a3c73 nt!IopLoadDriver+0x66d
+f9ea7d74 804e426b nt!IopLoadUnloadDriver+0x45
+f9ea7dac 8057aeff nt!ExpWorkerThread+0x100
+f9ea7ddc 804f88ea nt!PspSystemThreadStartup+0x34
+00000000 00000000 nt!KiThreadStartup+0x16
+ChildEBP RetAddr  Args to Child              
+f9ea7c7c 805a399d 8154ec08 8135c000 00000000 SimpleLegacyDrv!DriverEntry+0x4b [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 16]
+f9ea7d4c 805a3c73 80000688 00000001 00000000 nt!IopLoadDriver+0x66d
+f9ea7d74 804e426b 80000688 00000000 817c83c8 nt!IopLoadUnloadDriver+0x45
+f9ea7dac 8057aeff f7967cf4 00000000 00000000 nt!ExpWorkerThread+0x100
+f9ea7ddc 804f88ea 804e4196 00000001 00000000 nt!PspSystemThreadStartup+0x34
+00000000 00000000 00000000 00000000 00000000 nt!KiThreadStartup+0x16
+
+SimpleLegacyDrv!DriverEntry
+nt!IopLoadDriver
+nt!IopLoadUnloadDriver
+nt!ExpWorkerThread
+nt!PspSystemThreadStartup
+nt!KiThreadStartup
+f9ea7c7c  f9ea7d4c
+f9ea7c80  805a399d nt!IopLoadDriver+0x66d
+f9ea7c84  8154ec08
+f9ea7c88  8135c000
+f9ea7c8c  00000000
+f9ea7c90  f7967cf4
+f9ea7c94  00000000
+f9ea7c98  00000018
+f9ea7c9c  00000000
+f9ea7ca0  f9ea7cc0
+f9ea7ca4  00000010
+f9ea7ca8  00000000
+f9ea7cac  00000000
+f9ea7cb0  8154ec08
+f9ea7cb4  f9ea7d70
+f9ea7cb8  81313768
+f9ea7cbc  8135c000
+f9ea7cc0  002e002e
+f9ea7cc4  816ea178
+f9ea7cc8  ffffffff
+f9ea7ccc  8154ec08
+f9ea7cd0  816733e8
+f9ea7cd4  0000002e
+f9ea7cd8  80000688
+f9ea7cdc  fa0e6000 SimpleLegacyDrv!DbgPrint <PERF> (SimpleLegacyDrv+0x0)
+f9ea7ce0  000006d4
+f9ea7ce4  0020001e
+f9ea7ce8  e10f6498
+f9ea7cec  00000088
+f9ea7cf0  00420040
+f9ea7cf4  e16068a8
+f9ea7cf8  00000000
+f9ea7cfc  804d0030
+f9ea7d00  f7967cf4
+f9ea7d04  f7967cf4
+f9ea7d08  00000000
+f9ea7d0c  f9ea7d48
+f9ea7d10  00000000
+f9ea7d14  804dd019 nt!ZwOpenKey+0x11
+f9ea7d18  00000008
+f9ea7d1c  00000246
+f9ea7d20  805a267c nt!IopOpenRegistryKey+0x57
+f9ea7d24  f9ea7d7c
+f9ea7d28  00020019
+f9ea7d2c  f9ea7d30
+f9ea7d30  00000018
+f9ea7d34  00000000
+f9ea7d38  f7967d28
+f9ea7d3c  00000240
+f9ea7d40  00000000
+f9ea7d44  00000000
+f9ea7d48  0000bb40
+f9ea7d4c  f9ea7d74
+f9ea7d50  805a3c73 nt!IopLoadUnloadDriver+0x45
+f9ea7d54  80000688
+f9ea7d58  00000001
+f9ea7d5c  00000000
+f9ea7d60  f9ea7d70
+f9ea7d64  f7967cf4
+f9ea7d68  805622fc nt!ExWorkerQueue+0x3c
+f9ea7d6c  817c83c8
+f9ea7d70  00000000
+f9ea7d74  f9ea7dac
+f9ea7d78  804e426b nt!ExpWorkerThread+0x100
+f9ea7d7c  80000688
+f9ea7d80  00000000
+f9ea7d84  817c83c8
+f9ea7d88  00000000
+f9ea7d8c  00000000
+f9ea7d90  00000000
+f9ea7d94  00000001
+f9ea7d98  80562334 nt!ExWorkerQueue+0x74
+f9ea7d9c  00000000
+f9ea7da0  817c83c8
+f9ea7da4  00000000
+f9ea7da8  805a3c32 nt!IopLoadUnloadDriver
+f9ea7dac  f9ea7ddc
+f9ea7db0  8057aeff nt!PspSystemThreadStartup+0x34
+f9ea7db4  f7967cf4
+f9ea7db8  00000000
+f9ea7dbc  00000000
+f9ea7dc0  00000000
+f9ea7dc4  f9ea7db8
+f9ea7dc8  00000000
+f9ea7dcc  ffffffff
+f9ea7dd0  804e2490 nt!_except_handler3
+f9ea7dd4  804f8ab0 nt!ObWatchHandles+0x62c
+f9ea7dd8  00000000
+f9ea7ddc  00000000
+f9ea7de0  804f88ea nt!KiThreadStartup+0x16
+f9ea7de4  804e4196 nt!ExpWorkerThread
+f9ea7de8  00000001
+f9ea7dec  00000000
+f9ea7df0  0000027f
+f9ea7df4  00000000
+f9ea7df8  00000000
+f9ea7dfc  00000000
+f9ea7e00  00000000
+f9ea7e04  00000000
+f9ea7e08  00001f80
+f9ea7e0c  0000ffff
+f9ea7e10  00000000
+f9ea7e14  00000000
+f9ea7e18  00000000
+f9ea7e1c  00000000
+f9ea7e20  00000000
+f9ea7e24  00000000
+f9ea7e28  00000000
+f9ea7e2c  00000000
+f9ea7e30  00000000
+f9ea7e34  00000000
+f9ea7e38  00000000
+f9ea7e3c  00000000
+f9ea7e40  00000000
+f9ea7e44  00000000
+f9ea7e48  00000000
+f9ea7e4c  00000000
+f9ea7e50  00000000
+f9ea7e54  00000000
+f9ea7e58  00000000
+f9ea7e5c  00000000
+f9ea7e60  00000000
+f9ea7e64  00000000
+f9ea7e68  00000000
+f9ea7e6c  00000000
+f9ea7e70  00000000
+f9ea7e74  00000000
+f9ea7e78  00000000
+f9ea7e7c  00000000
+f9ea7e80  00000000
+f9ea7e84  00000000
+f9ea7e88  00000000
+f9ea7e8c  00000000
+f9ea7e90  00000000
+f9ea7e94  00000000
+f9ea7e98  00000000
+f9ea7e9c  00000000
+f9ea7ea0  00000000
+f9ea7ea4  00000000
+f9ea7ea8  00000000
+f9ea7eac  00000000
+f9ea7eb0  00000000
+f9ea7eb4  00000000
+f9ea7eb8  00000000
+f9ea7ebc  00000000
+f9ea7ec0  00000000
+f9ea7ec4  00000000
+f9ea7ec8  00000000
+f9ea7ecc  00000000
+f9ea7ed0  00000000
+f9ea7ed4  00000000
+f9ea7ed8  00000000
+f9ea7edc  00000000
+f9ea7ee0  00000000
+f9ea7ee4  00000000
+f9ea7ee8  00000000
+f9ea7eec  00000000
+f9ea7ef0  00000000
+f9ea7ef4  00000000
+f9ea7ef8  00000000
+f9ea7efc  00000000
+f9ea7f00  00000000
+f9ea7f04  00000000
+f9ea7f08  00000000
+f9ea7f0c  00000000
+f9ea7f10  00000000
+f9ea7f14  00000000
+f9ea7f18  00000000
+f9ea7f1c  00000000
+f9ea7f20  00000000
+f9ea7f24  00000000
+f9ea7f28  00000000
+f9ea7f2c  00000000
+f9ea7f30  00000000
+f9ea7f34  00000000
+f9ea7f38  00000000
+f9ea7f3c  00000000
+f9ea7f40  00000000
+f9ea7f44  00000000
+f9ea7f48  00000000
+f9ea7f4c  00000000
+f9ea7f50  00000000
+f9ea7f54  00000000
+f9ea7f58  00000000
+f9ea7f5c  00000000
+f9ea7f60  00000000
+f9ea7f64  00000000
+f9ea7f68  00000000
+f9ea7f6c  00000000
+f9ea7f70  00000000
+f9ea7f74  00000000
+f9ea7f78  00000000
+f9ea7f7c  00000000
+f9ea7f80  00000000
+f9ea7f84  00000000
+f9ea7f88  00000000
+f9ea7f8c  00000000
+f9ea7f90  00000000
+f9ea7f94  00000000
+f9ea7f98  00000000
+f9ea7f9c  00000000
+f9ea7fa0  00000000
+f9ea7fa4  00000000
+f9ea7fa8  00000000
+f9ea7fac  00000000
+f9ea7fb0  00000000
+f9ea7fb4  00000000
+f9ea7fb8  00000000
+f9ea7fbc  00000000
+f9ea7fc0  00000000
+f9ea7fc4  00000000
+f9ea7fc8  00000000
+f9ea7fcc  00000000
+f9ea7fd0  00000000
+f9ea7fd4  00000000
+f9ea7fd8  00000000
+f9ea7fdc  00000000
+f9ea7fe0  00000000
+f9ea7fe4  00000000
+f9ea7fe8  00000000
+f9ea7fec  00000000
+f9ea7ff0  00000000
+f9ea7ff4  00000000
+f9ea7ff8  00000000
+f9ea7ffc  00000000
+f9ea8000  ????????
+f9ea8004  ????????
+f9ea8008  ????????
+f9ea800c  ????????
+f9ea8010  ????????
+f9ea8014  ????????
+f9ea8018  ????????
+f9ea801c  ????????
+f9ea8020  ????????
+f9ea8024  ????????
+f9ea8028  ????????
+f9ea802c  ????????
+f9ea8030  ????????
+f9ea8034  ????????
+f9ea8038  ????????
+f9ea803c  ????????
+f9ea8040  ????????
+f9ea8044  ????????
+f9ea8048  ????????
+f9ea804c  ????????
+f9ea8050  ????????
+f9ea8054  ????????
+f9ea8058  ????????
+f9ea805c  ????????
+f9ea8060  ????????
+f9ea8064  ????????
+f9ea8068  ????????
+f9ea806c  ????????
+f9ea8070  ????????
+f9ea8074  ????????
+f9ea8078  ????????
+ChildEBP RetAddr  
+f9ea7c7c 805a399d SimpleLegacyDrv!DriverEntry(struct _DRIVER_OBJECT * DriverObject = 0x8154ec08, struct _UNICODE_STRING * RegistryPath = 0x8135c000 "\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\SimpleLegacyDrv")+0x4b [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 16]
+f9ea7d4c 805a3c73 nt!IopLoadDriver+0x66d
+f9ea7d74 804e426b nt!IopLoadUnloadDriver+0x45
+f9ea7dac 8057aeff nt!ExpWorkerThread+0x100
+f9ea7ddc 804f88ea nt!PspSystemThreadStartup+0x34
+00000000 00000000 nt!KiThreadStartup+0x16
+ChildEBP RetAddr  
+f9ea7c7c 805a399d SimpleLegacyDrv!DriverEntry(
+			struct _DRIVER_OBJECT * DriverObject = 0x8154ec08, 
+			struct _UNICODE_STRING * RegistryPath = 0x8135c000 "\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\SimpleLegacyDrv")+0x4b [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 16]
+f9ea7d4c 805a3c73 nt!IopLoadDriver+0x66d
+f9ea7d74 804e426b nt!IopLoadUnloadDriver+0x45
+f9ea7dac 8057aeff nt!ExpWorkerThread+0x100
+f9ea7ddc 804f88ea nt!PspSystemThreadStartup+0x34
+00000000 00000000 nt!KiThreadStartup+0x16
+ChildEBP RetAddr  Args to Child              
+f9ea7c7c 805a399d 8154ec08 8135c000 00000000 SimpleLegacyDrv!DriverEntry+0x4b (FPO: [Non-Fpo]) (CONV: stdcall) [c:\radasm\wdk\projects\driver_projects\pdlr01_gladyr\src\simplelegacydrv\simplelegacydrv.c @ 16]
+f9ea7d4c 805a3c73 80000688 00000001 00000000 nt!IopLoadDriver+0x66d (FPO: [Non-Fpo])
+f9ea7d74 804e426b 80000688 00000000 817c83c8 nt!IopLoadUnloadDriver+0x45 (FPO: [Non-Fpo])
+f9ea7dac 8057aeff f7967cf4 00000000 00000000 nt!ExpWorkerThread+0x100 (FPO: [Non-Fpo])
+f9ea7ddc 804f88ea 804e4196 00000001 00000000 nt!PspSystemThreadStartup+0x34 (FPO: [Non-Fpo])
+00000000 00000000 00000000 00000000 00000000 nt!KiThreadStartup+0x16
+kd> .lines;lsp 5 3;1+s;1-t;p
+Line number information will not be loaded
+WARNING: Source line display is disabled
+At the prompt, display 5 source lines before and 3 after
+                   ^ Syntax error in '.lines;lsp 5 3;1+s;1-t;p'
+kd> .lines;lsp 5 3;l+s;l-t;p
+Line number information will be loaded
+WARNING: Source line display is disabled
+At the prompt, display 5 source lines before and 3 after
+Source options are 4:
+     4/s - List source code at prompt
+Source options are 4:
+     4/s - List source code at prompt
+eax=817cc9c8 ebx=00000000 ecx=804ff063 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e66e1 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    11: 	SELECTOR	selector	= {0};
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+>   16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+SimpleLegacyDrv!DriverEntry+0x51:
+fa0e66e1 8945fc          mov     dword ptr [ebp-4],eax ss:0010:f9ea7c78=00000000
+kd> p
+eax=817cc9c8 ebx=00000000 ecx=804ff063 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e66e4 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x54:
+fa0e66e4 a114650efa      mov     eax,dword ptr [SimpleLegacyDrv!_imp__PsInitialSystemProcess (fa0e6514)] ds:0023:fa0e6514={nt!PsInitialSystemProcess (80561454)}
+kd> p
+eax=80561454 ebx=00000000 ecx=804ff063 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e66e9 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x59:
+fa0e66e9 8b4dfc          mov     ecx,dword ptr [ebp-4] ss:0010:f9ea7c78=817cc9c8
+kd> p
+eax=80561454 ebx=00000000 ecx=817cc9c8 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e66ec esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x5c:
+fa0e66ec 3b08            cmp     ecx,dword ptr [eax]  ds:0023:80561454=817cc9c8
+kd> p
+eax=80561454 ebx=00000000 ecx=817cc9c8 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e66ee esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x5e:
+fa0e66ee 7509            jne     SimpleLegacyDrv!DriverEntry+0x69 (fa0e66f9) [br=0]
+kd> p
+eax=80561454 ebx=00000000 ecx=817cc9c8 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e66f0 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x60:
+fa0e66f0 c745f460680efa  mov     dword ptr [ebp-0Ch],offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e6860) ss:0010:f9ea7c70=00000005
+kd> p
+eax=80561454 ebx=00000000 ecx=817cc9c8 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e66f7 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x67:
+fa0e66f7 eb07            jmp     SimpleLegacyDrv!DriverEntry+0x70 (fa0e6700)
+kd> p
+eax=80561454 ebx=00000000 ecx=817cc9c8 edx=00000011 esi=e10f64b8 edi=8154ec08
+eip=fa0e6700 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x70:
+fa0e6700 8b55f4          mov     edx,dword ptr [ebp-0Ch] ss:0010:f9ea7c70={SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e6860)}
+kd> p
+eax=80561454 ebx=00000000 ecx=817cc9c8 edx=fa0e6860 esi=e10f64b8 edi=8154ec08
+eip=fa0e6703 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x73:
+fa0e6703 52              push    edx
+kd> p
+eax=80561454 ebx=00000000 ecx=817cc9c8 edx=fa0e6860 esi=e10f64b8 edi=8154ec08
+eip=fa0e6704 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x74:
+fa0e6704 8b45fc          mov     eax,dword ptr [ebp-4] ss:0010:f9ea7c78=817cc9c8
+kd> p
+eax=817cc9c8 ebx=00000000 ecx=817cc9c8 edx=fa0e6860 esi=e10f64b8 edi=8154ec08
+eip=fa0e6707 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x77:
+fa0e6707 50              push    eax
+kd> p
+eax=817cc9c8 ebx=00000000 ecx=817cc9c8 edx=fa0e6860 esi=e10f64b8 edi=8154ec08
+eip=fa0e6708 esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x78:
+fa0e6708 6820680efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e6820)
+kd> p
+eax=817cc9c8 ebx=00000000 ecx=817cc9c8 edx=fa0e6860 esi=e10f64b8 edi=8154ec08
+eip=fa0e670d esp=f9ea7c64 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x7d:
+fa0e670d e874fdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+kd> p
+
+Current process : 0x817CC9C8 ( System Process ) eax=00000000 ebx=00000000 ecx=804ff063 edx=00000031 esi=e10f64b8 edi=8154ec08
+eip=fa0e6712 esp=f9ea7c64 ebp=f9ea7c7c iopl=0         nv up ei pl nz ac po cy
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000213
+    12: 	__debugbreak();
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+>   17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+SimpleLegacyDrv!DriverEntry+0x82:
+fa0e6712 83c40c          add     esp,0Ch
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=00000031 esi=e10f64b8 edi=8154ec08
+eip=fa0e6715 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    13: 	DbgPrint("\nStart DriverEntry");
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+>   18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+SimpleLegacyDrv!DriverEntry+0x85:
+fa0e6715 668c4df8        mov     word ptr [ebp-8],cs      ss:0010:f9ea7c74=0000
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=00000031 esi=e10f64b8 edi=8154ec08
+eip=fa0e6719 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0x89:
+fa0e6719 668b4df8        mov     cx,word ptr [ebp-8]      ss:0010:f9ea7c74=0008
+kd> p
+eax=00000000 ebx=00000000 ecx=804f0008 edx=00000031 esi=e10f64b8 edi=8154ec08
+eip=fa0e671d esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0x8d:
+fa0e671d 6683e103        and     cx,3
+kd> p
+eax=00000000 ebx=00000000 ecx=804f0000 edx=00000031 esi=e10f64b8 edi=8154ec08
+eip=fa0e6721 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0x91:
+fa0e6721 0fb7d1          movzx   edx,cx
+kd> p
+eax=00000000 ebx=00000000 ecx=804f0000 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e6724 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0x94:
+fa0e6724 52              push    edx
+kd> p
+eax=00000000 ebx=00000000 ecx=804f0000 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e6725 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0x95:
+fa0e6725 668b45f8        mov     ax,word ptr [ebp-8]      ss:0010:f9ea7c74=0008
+kd> p
+eax=00000008 ebx=00000000 ecx=804f0000 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e6729 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0x99:
+fa0e6729 66c1e802        shr     ax,2
+kd> p
+eax=00000002 ebx=00000000 ecx=804f0000 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e672d esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl nz na po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000202
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0x9d:
+fa0e672d 6683e001        and     ax,1
+kd> p
+eax=00000000 ebx=00000000 ecx=804f0000 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e6731 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xa1:
+fa0e6731 0fb7c8          movzx   ecx,ax
+kd> p
+eax=00000000 ebx=00000000 ecx=00000000 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e6734 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xa4:
+fa0e6734 51              push    ecx
+kd> p
+eax=00000000 ebx=00000000 ecx=00000000 edx=00000000 esi=e10f64b8 edi=8154ec08
+eip=fa0e6735 esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xa5:
+fa0e6735 668b55f8        mov     dx,word ptr [ebp-8]      ss:0010:f9ea7c74=0008
+kd> p
+eax=00000000 ebx=00000000 ecx=00000000 edx=00000008 esi=e10f64b8 edi=8154ec08
+eip=fa0e6739 esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei pl zr na pe nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000246
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xa9:
+fa0e6739 66c1ea03        shr     dx,3
+kd> p
+eax=00000000 ebx=00000000 ecx=00000000 edx=00000001 esi=e10f64b8 edi=8154ec08
+eip=fa0e673d esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei pl nz na po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000202
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xad:
+fa0e673d b8ff1f0000      mov     eax,1FFFh
+kd> p
+eax=00001fff ebx=00000000 ecx=00000000 edx=00000001 esi=e10f64b8 edi=8154ec08
+eip=fa0e6742 esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei pl nz na po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000202
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xb2:
+fa0e6742 6623d0          and     dx,ax
+kd> p
+eax=00001fff ebx=00000000 ecx=00000000 edx=00000001 esi=e10f64b8 edi=8154ec08
+eip=fa0e6745 esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei pl nz na po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000202
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xb5:
+fa0e6745 0fb7ca          movzx   ecx,dx
+kd> p
+eax=00001fff ebx=00000000 ecx=00000001 edx=00000001 esi=e10f64b8 edi=8154ec08
+eip=fa0e6748 esp=f9ea7c68 ebp=f9ea7c7c iopl=0         nv up ei pl nz na po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000202
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xb8:
+fa0e6748 51              push    ecx
+kd> p
+eax=00001fff ebx=00000000 ecx=00000001 edx=00000001 esi=e10f64b8 edi=8154ec08
+eip=fa0e6749 esp=f9ea7c64 ebp=f9ea7c7c iopl=0         nv up ei pl nz na po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000202
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xb9:
+fa0e6749 0fb755f8        movzx   edx,word ptr [ebp-8]     ss:0010:f9ea7c74=0008
+kd> p
+eax=00001fff ebx=00000000 ecx=00000001 edx=00000008 esi=e10f64b8 edi=8154ec08
+eip=fa0e674d esp=f9ea7c64 ebp=f9ea7c7c iopl=0         nv up ei pl nz na po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000202
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xbd:
+fa0e674d 52              push    edx
+kd> p
+eax=00001fff ebx=00000000 ecx=00000001 edx=00000008 esi=e10f64b8 edi=8154ec08
+eip=fa0e674e esp=f9ea7c60 ebp=f9ea7c7c iopl=0         nv up ei pl nz na po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000202
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xbe:
+fa0e674e 68f0670efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e67f0)
+kd> p
+eax=00001fff ebx=00000000 ecx=00000001 edx=00000008 esi=e10f64b8 edi=8154ec08
+eip=fa0e6753 esp=f9ea7c5c ebp=f9ea7c7c iopl=0         nv up ei pl nz na po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000202
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xc3:
+fa0e6753 e82efdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+kd> p
+
+CS : 0x0008 ( Index = 1, TI = 0, CPL = 0 ) eax=00000000 ebx=00000000 ecx=804ff063 edx=0000002c esi=e10f64b8 edi=8154ec08
+eip=fa0e6758 esp=f9ea7c5c ebp=f9ea7c7c iopl=0         nv up ei pl nz ac po cy
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000213
+    14: 	DbgPrint("\nRegistryPath : %wZ", RegistryPath);
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+>   19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+SimpleLegacyDrv!DriverEntry+0xc8:
+fa0e6758 83c414          add     esp,14h
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=0000002c esi=e10f64b8 edi=8154ec08
+eip=fa0e675b esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+>   20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+    22: }
+SimpleLegacyDrv!DriverEntry+0xcb:
+fa0e675b 68d0670efa      push    offset SimpleLegacyDrv! ?? ::PBOPGDP::`string' (fa0e67d0)
+kd> dt _SELECTOR -r2;dt selector -r2
+SimpleLegacyDrv!_SELECTOR
+   +0x000 u                : <unnamed-tag>
+      +0x000 bits             : <unnamed-tag>
+         +0x000 CPL              : Pos 0, 2 Bits
+         +0x000 TI               : Pos 2, 1 Bit
+         +0x000 Index            : Pos 3, 13 Bits
+      +0x000 SReg             : Uint2B
+Local var @ 0xf9ea7c74 Type _SELECTOR
+   +0x000 u                : <unnamed-tag>
+      +0x000 bits             : <unnamed-tag>
+         +0x000 CPL              : 0y00
+         +0x000 TI               : 0y0
+         +0x000 Index            : 0y0000000000001 (0x1)
+      +0x000 SReg             : 8
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=0000002c esi=e10f64b8 edi=8154ec08
+eip=fa0e6760 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+>   20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+    22: }
+SimpleLegacyDrv!DriverEntry+0xd0:
+fa0e6760 e821fdffff      call    SimpleLegacyDrv!DbgPrint (fa0e6486)
+kd> p
+
+Finish DriverEntryeax=00000000 ebx=00000000 ecx=804ff063 edx=00000013 esi=e10f64b8 edi=8154ec08
+eip=fa0e6765 esp=f9ea7c6c ebp=f9ea7c7c iopl=0         nv up ei pl nz ac po cy
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000213
+    15: 	DbgPrint("\nCurrent IRQL : %d", KeGetCurrentIrql());
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+>   20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+    22: }
+SimpleLegacyDrv!DriverEntry+0xd5:
+fa0e6765 83c404          add     esp,4
+kd> p
+eax=00000000 ebx=00000000 ecx=804ff063 edx=00000013 esi=e10f64b8 edi=8154ec08
+eip=fa0e6768 esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    16: 	process = PsGetCurrentProcess();
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+>   21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+    22: }
+    23: 
+SimpleLegacyDrv!DriverEntry+0xd8:
+fa0e6768 b8820100c0      mov     eax,0C0000182h
+kd> p
+eax=c0000182 ebx=00000000 ecx=804ff063 edx=00000013 esi=e10f64b8 edi=8154ec08
+eip=fa0e676d esp=f9ea7c70 ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+>   22: }
+    23: 
+SimpleLegacyDrv!DriverEntry+0xdd:
+fa0e676d 8be5            mov     esp,ebp
+kd> p
+eax=c0000182 ebx=00000000 ecx=804ff063 edx=00000013 esi=e10f64b8 edi=8154ec08
+eip=fa0e676f esp=f9ea7c7c ebp=f9ea7c7c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+>   22: }
+    23: 
+SimpleLegacyDrv!DriverEntry+0xdf:
+fa0e676f 5d              pop     ebp
+kd> p
+eax=c0000182 ebx=00000000 ecx=804ff063 edx=00000013 esi=e10f64b8 edi=8154ec08
+eip=fa0e6770 esp=f9ea7c80 ebp=f9ea7d4c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+    17: 	DbgPrint("\nCurrent process : 0x%X ( %s ) ", process, process == PsInitialSystemProcess  ? "System Process" : "Not System Process");  
+    18: 	__asm { mov selector,cs}
+    19: 	DbgPrint("\nCS : 0x%04X ( Index = %d, TI = %d, CPL = %d ) ", selector.u.SReg, selector.u.bits.Index, selector.u.bits.TI, selector.u.bits.CPL);
+    20: 	DbgPrint("\nFinish DriverEntry");
+    21: 	return STATUS_DEVICE_CONFIGURATION_ERROR;
+>   22: }
+    23: 
+SimpleLegacyDrv!DriverEntry+0xe0:
+fa0e6770 c20800          ret     8
+kd> p
+eax=c0000182 ebx=00000000 ecx=804ff063 edx=00000013 esi=e10f64b8 edi=8154ec08
+eip=805a399d esp=f9ea7c8c ebp=f9ea7d4c iopl=0         nv up ei ng nz ac po nc
+cs=0008  ss=0010  ds=0023  es=0023  fs=0030  gs=0000             efl=00000292
+nt!IopLoadDriver+0x66d:
+805a399d 3bc3            cmp     eax,ebx
+kd> g
+00:10:00.373294 timesync vgsvcTimeSyncWorker: Radical host time change: 12 357 064 000 000ns (HostNow=1 551 713 198 538 000 000 ns HostLast=1 551 700 841 474 000 000 ns)
+00:10:10.387694 timesync vgsvcTimeSyncWorker: Radical guest time change: 12 356 925 740 600ns (GuestNow=1 551 713 208 552 400 000 ns GuestLast=1 551 700 851 626 659 400 ns fSetTimeLastLoop=true )
+VBOXNP: DLL loaded.
+00:10:23.746904 control  Guest control service stopped
+00:10:23.776947 control  Guest control worker returned with rc=VINF_SUCCESS
+00:10:23.796976 main     Session 0 is about to close ...
+00:10:23.806990 main     Stopping all guest processes ...
+00:10:23.817004 main     Closing all guest files ...
+00:10:23.877091 main     Ended.
+vgdrvHeartbeatInit: Setting up heartbeat to trigger every 2000 milliseconds
+vgdrvNtInit: Device is ready!
+IPRT: RTMpPoke => rtMpPokeCpuUsingDpc
+WARNING: update_f9179000 overlaps dmboot
+WARNING: ipsec_f90fe000 overlaps dmboot
+WARNING: tcpip_f90a5000 overlaps hidusb
+WARNING: tcpip_f90a5000 overlaps rdpdr
+WARNING: tcpip_f90a5000 overlaps dmboot
+WARNING: netbt_f907d000 overlaps update
+WARNING: netbt_f907d000 overlaps Dxapi
+WARNING: netbt_f907d000 overlaps mouhid
+WARNING: netbt_f907d000 overlaps hidusb
+WARNING: afd_f905b000 overlaps update
+WARNING: VBoxSF_f9011000 overlaps update
+WARNING: mrxsmb overlaps tcpip
+WARNING: mrxsmb overlaps ipsec
+WARNING: ipnat_f8f28000 overlaps netbt
+WARNING: ipnat_f8f28000 overlaps tcpip
+WARNING: hidusb_f9175000 overlaps dmboot
+WARNING: mouhid_f9171000 overlaps dmboot
+WARNING: Dxapi_f9165000 overlaps dmboot
+VBoxService 5.2.20 r125813 (verbosity: 0) win.x86 (Oct 15 2018 15:25:11) release log
+00:00:00.000000 main     Log opened 2019-03-05T10:48:04.103809600Z
+00:00:00.010014 main     OS Product: Windows XP Professional
+00:00:00.020028 main     OS Release: 5.1.2600
+00:00:00.030043 main     OS Service Pack: 3
+00:00:00.040057 main     Executable: C:\WINDOWS\System32\VBoxService.exe
+00:00:00.040057 main     Process ID: 884
+00:00:00.040057 main     Package type: WINDOWS_32BITS_GENERIC
+00:00:00.050072 main     5.2.20 r125813 started. Verbose level = 0
+WARNING: mrxdav_f7874000 overlaps wdmaud
+ERROR: DavReadRegistryValues/RegQueryValueExW(4). WStatus = 5
+ERROR: DavReadRegistryValues/RegQueryValueExW(5). WStatus = 5
+ERROR: DavReadRegistryValues/RegQueryValueExW(6). WStatus = 5
+00:00:10.064472 timesync vgsvcTimeSyncWorker: Radical guest time change: 3 649 021 489 600ns (GuestNow=1 551 786 533 185 385 600 ns GuestLast=1 551 782 884 163 896 000 ns fSetTimeLastLoop=true )
+Windows version 5.1
+Starting services ...
+Starting service 'display' ...
+Service 'display' started
+Starting service 'clipboard' ...
+Service 'clipboard' started
+Starting service 'seamless' ...
+Service 'seamless' started
+Starting service 'VRDP' ...
+Service 'VRDP' started
+Starting service 'IPC' ...
+VBoxIPCInit: Local IPC server now running at "\\.\pipe\VBoxTrayIPC-user"
+Service 'IPC' started
+Starting service 'LA' ...
+LA: RegQueryValueExW: failed [SOFTWARE\Oracle\VirtualBox Guest Additions/VBoxTrayLog]
+LA: RegQueryValueExW: failed [SOFTWARE\Oracle\VirtualBox Guest Additions/VBoxTrayLA]
+LA: DetachOnDisconnect=true 
+Service 'LA' started
+Starting service 'draganddrop' ...
+DnD: Drag and drop service successfully started
+Service 'draganddrop' started
+All services started
+VBOXNP: DLL loaded.
+Mounting "Desktop" to "D:" resulted in dwErr = 85
+Shared folder "Desktop" was mounted to drive "E:"
+VBOXNP: DLL loaded.
+VBOXNP: DLL loaded.
+00:03:56.429969 control  Guest control service stopped
+00:03:56.470027 control  Guest control worker returned with rc=VINF_SUCCESS
+00:03:56.480041 main     Session 0 is about to close ...
+00:03:56.490056 main     Stopping all guest processes ...
+00:03:56.500070 main     Closing all guest files ...
+00:03:56.580185 main     Ended.

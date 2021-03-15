@@ -1,0 +1,12 @@
+Шаблон консольного додатку мовою С для компіляції штатними засобами WDK. 
+При компіляції використовується файл radasmbuild.cmd, отриманий незначною 
+модернізацією штатного setenv.bat зі складу WDK. Синтаксис: 
+radasmbuild.cmd <WDK_directory> [fre|chk] [64|x64] [WIN7|WLH|WXP|WNET] [bscmake] [no_oacr] [separate_object_root] <Project directory>
+<Project directory> - шлях до каталогу проекту, інші параметри аналогічні setenv.bat
+За замовчуванням виконується компіляція 32-розрядного UNICODE-додатка Windows XP.
+За необхідності:
+1) закоментувати/видалити рядок C_DEFINES=... у файлі sources
+2) змінити опис wmain на main в с-файлі і рядок UMENTRY = wmain у файлі sources
+3) Скориставшись меню "Менеджер\Налаштування проекту" змінити/прибрати/додати параметри у
+0,O,$B\radasmbuild.cmd $A chk wxp no_oacr,3 (64|x64, WIN7|WLH|WNET) 
+

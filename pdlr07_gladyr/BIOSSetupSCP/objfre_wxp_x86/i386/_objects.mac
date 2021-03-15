@@ -1,0 +1,17 @@
+
+
+386_OBJECTS=\
+ $(OBJ_PATH)\$O\biossetupscp.obj \
+
+
+_RES_FILE=$(OBJ_PATH)\$O\biossetupscp.res
+
+
+
+# lowercased
+BASEDIR=c:\winddk
+OBJECT_ROOT=c:\winddk
+MAKEDIR_LOWERCASE=c:\radasm\wdk\projects\driver_projects\pdlr07_gladyr\biossetupscp
+OBJ_PATH=c:\radasm\wdk\projects\driver_projects\pdlr07_gladyr\biossetupscp
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0

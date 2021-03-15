@@ -1,0 +1,8 @@
+TARGETNAME=ProcessNotify
+TARGETPATH=SYS
+TARGETTYPE=DRIVER
+
+USER_C_FLAGS = /FAs
+
+SOURCES =	ProcessNotify.c	\
+			ProcessNotify.rc

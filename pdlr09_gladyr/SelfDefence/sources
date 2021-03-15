@@ -1,0 +1,8 @@
+TARGETNAME=SelfDefence
+TARGETPATH=SYS
+TARGETTYPE=DRIVER
+
+USER_C_FLAGS = /FAs
+
+SOURCES =	SelfDefence.c	\
+			SelfDefence.rc

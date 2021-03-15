@@ -1,0 +1,7 @@
+Перегляд конфігураційного простору PCI-шини.
+Bus = 0, Device = 7, Function = 3
+Registry 0x00 : 0x71138086	DeviceId	- 7113, VendorId - 8086 (Intel)
+Registry 0x04 : 0x00000000
+...............................................
+http://pcidatabase.com/
+0x7113	PIIX4/4E/4M Power Management Controller	0x8086	Intel core 2 cpu
